@@ -9,12 +9,18 @@ class UserAccount(models.Model):
     name = models.CharField(max_length=60, unique=True)
     date_created = models.DateTimeField(default=timezone.now)
     dl = models.CharField(max_length=16, unique=True)
-    phone = models.CharField(max_length=10, unique=True)
+    phone = models.CharField(max_length=15, unique=True)
+
+    def __str__(self):
+        return '{0} - {1}'.format(self.user, self.name, self.date_created, self.dl, self.phone)
 
 
 class Price(models.Model):
     amount = models.CharField(max_length=15)
     weight = models.CharField(max_length=20)
+
+    def __str__(self):
+        return '{0} - {1}'.format(self.amount, self.weight)
 
 
 class Product(models.Model):
@@ -22,18 +28,24 @@ class Product(models.Model):
     description = models.TextField()
     prices = models.ManyToManyField(Price)
 
+    def __str__(self):
+        return '{0} - {1}'.format(self.strain, self.description, self.prices)
+
 
 class Dispensary(models.Model):
     name = models.CharField(max_length=60)
     address = models.CharField(max_length=80)
-    phone = models.CharField(max_length=10)
+    phone = models.CharField(max_length=15)
     hours = models.CharField(max_length=50)
     menu = models.ManyToManyField(Product)
 
+    def __str__(self):
+        return '{0} - {1}'.format(self.name, self.address, self.phone, self.hours, self.menu)
+
 
 class Order(models.Model):
-    order_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    user_dl = models.ForeignKey(UserAccount)
+    order_id = models.UUIDField(default=uuid.uuid4, editable=False)
+    user_acct = models.ForeignKey(UserAccount)
     products = models.ManyToManyField(Product)
     total_cost = models.DecimalField(max_digits=10, decimal_places=2)
     time_ordered = models.DateTimeField(default=timezone.now)

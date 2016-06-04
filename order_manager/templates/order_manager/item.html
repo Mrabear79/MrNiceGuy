@@ -1,0 +1,6 @@
+<p>{{ item.pk }}</p>
+<p>{{ item.strain }}</p>
+<p>{{ item.description }}</p>
+{% for price in item.prices.all %}
+ <span> {{price}} </span> <br>
+{% endfor %}

@@ -9,13 +9,21 @@
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     </head>
     <body>
+      <div>
+        {{ user }}
+        {% if user.is_anonymous %}
+        <a href="{% url 'django.contrib.auth.views.login' %}">login</a>
+        {% else %}
+        <a href="{% url 'django.contrib.auth.views.logout' %}">logout</a>
+        {% endif %}
+      </div>
       {% include 'registration/login.html' %}
       {% block main %}
         <div class="page-header">
       {% if user.is_authenticated %}
       {% endif %}
-            <h1><a href="/">ToDo List</a></h1>
-            <img src=
+            <h1><a href="/">Product List</a></h1>
+            <!-- <img src= -->
         </div>
       {% endblock %}
         <div class="content container">
