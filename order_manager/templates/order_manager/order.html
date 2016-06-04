@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Cannabis Order Form</title>
+
+<!-- CSS -->
+  <style>
+  .myForm {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 0.8em;
+    width: 20em;
+    padding: 1em;
+    border: 1px solid #ccc;
+}
+
+  .myForm * {
+    box-sizing: border-box;
+}
+
+  .myForm fieldset {
+    border: none;
+    padding: 0;
+}
+
+  .myForm legend,
+  .myForm label {
+    padding: 0;
+    font-weight: bold;
+}
+
+  .myForm label.choice {
+    font-size: 0.9em;
+    font-weight: normal;
+}
+
+  .myForm input[type="text"],
+  .myForm input[type="tel"],
+  .myForm input[type="email"],
+  .myForm input[type="datetime-local"],
+  .myForm select,
+  .myForm textarea {
+    display: block;
+    width: 100%;
+    border: 1px solid #ccc;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 0.9em;
+    padding: 0.3em;
+}
+
+  .myForm textarea {
+    height: 100px;
+}
+
+  .myForm button {
+    padding: 1em;
+    border-radius: 0.5em;
+    background: #eee;
+    border: none;
+    font-weight: bold;
+    margin-top: 1em;
+}
+
+  .myForm button:hover {
+    background: #ccc;
+    cursor: pointer;
+}
+  </style>
+
+  </head>
+  <body>
+
+    <form class="myForm" method="get" enctype="application/x-www-form-urlencoded" action="/html/codes/html_form_handler.cfm">
+
+  <p>
+    <label>Name
+      <input type="text" name="customer_name" required>
+    </label>
+  </p>
+
+  <p>
+    <label>Phone
+      <input type="tel" name="phone_number">
+    </label>
+  </p>
+
+  <p>
+    <label>Email
+      <input type="email" name="email_address">
+    </label>
+  </p>
+
+  <fieldset>
+    <legend>Dispensary Products</legend>
+    <p><label class="choice"> <input type="radio" name="product" required value="flower"> Flower </label></p>
+  </fieldset>
+
+  <fieldset>
+    <legend>Strains</legend>
+    <p><label class="choice"> <input type="checkbox" name="strains" value="nepalese"> Nepalese Kush - Mindful Inc THC: 21.33% CBD: 0.06% </label></p>
+    <p><label class="choice"> <input type="checkbox" name="strains" value="blueberry "> Blueberry Headband - Green Dragon THC: 24.2% CBD: 0.01% </label></p>
+    <p><label class="choice"> <input type="checkbox" name="strains" value="cherry"> Cherry Kush - Terra Canna THC: 20.93% CBD: 0.68% </label></p>
+    <p><label class="choice"> <input type="checkbox" name="strains" value="chocolate"> Chocolate Chunk - Guffey THC: 21.21% CBD: 0.07% </label></p>
+    <p><label class="choice"> <input type="checkbox" name="strains" value="kimbo"> Kimbo Kush - Garden Terrace THC: 23.35% CBD: 0.05% </label></p>
+    <p><label class="choice"> <input type="checkbox" name="strains" value="northern"> Northern Berry - Moon Rain THC: 22.61% CBD: 0.08% </label></p>
+    <p><label class="choice"> <input type="checkbox" name="strains" value="money"> Money Maker - Mindful Inc THC: 21.1% CBD: 0.06% </label></p>
+    <p><label class="choice"> <input type="checkbox" name="strains" value="kashmir"> Kashmir Kush - Mindful Inc THC: 27.29% CBD: 0.08% </label></p>
+  </fieldset>
+
+<p>
+  <label>Pickup Date/Time
+    <input type="datetime-local" name="pickup_time" required>
+  </label>
+</p>
+
+<p>
+  <label>Pickup Dispensary
+    <select id="pickup_dispensary" name="pickup_dispensary">
+      <option value="" selected="selected">Select One</option>
+      <option value="buds" >Best Buds - 420 SW Drag Way Portland, OR 97201</option>
+    </select>
+  </label>
+</p>
+
+<p>
+  <label>Total Cost
+    <textarea name="total" maxlength="10"></textarea>
+  </label>
+</p>
+
+<p><button>Submit Order</button></p>
+
+  </form>
+
+  </body>
+</html>

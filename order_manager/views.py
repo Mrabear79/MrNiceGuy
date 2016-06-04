@@ -39,4 +39,4 @@ def order_form(request):
         return redirect('product_item', id=product.pk)
     else:
         form = OrderForm()
-    return render(request, 'order_manager/home.html', {'form': form})
+    return render(request, 'order_manager/order.html', {'form': form})
