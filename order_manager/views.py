@@ -20,15 +20,6 @@ def product_list(request):
     })
 
 
-def home(request):
-    products = Product.objects.all()
-    form = AuthenticationForm()
-    return render(request, 'order_manager/home.html', {
-        'products': products,
-        'form': form
-    })
-
-
 def order_form(request):
     if request.method == "POST":
         form = OrderForm(request.POST)
@@ -40,3 +31,12 @@ def order_form(request):
     else:
         form = OrderForm()
     return render(request, 'order_manager/order.html', {'form': form})
+
+
+def home(request):
+    products = Product.objects.all()
+    form = AuthenticationForm()
+    return render(request, 'order_manager/home.html', {
+        'products': products,
+        'form': form
+    })

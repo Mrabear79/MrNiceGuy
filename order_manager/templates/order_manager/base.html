@@ -1,38 +1,31 @@
 {% load staticfiles %}
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Cannibis Order Form</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link href='http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-    </head>
+  <head>
+    <title>Cannibis Order Form</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Rye&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{% static 'order_manager/style.css' %}">
+  </head>
     <body>
-      <div>
+      <div class="header">
+        <h1>Welcome to Mr.NiceGuy</h1>
         {{ user }}
         {% if user.is_anonymous %}
         <a href="{% url 'django.contrib.auth.views.login' %}">login</a>
         {% else %}
         <a href="{% url 'django.contrib.auth.views.logout' %}">logout</a>
         {% endif %}
-      </div>
       {% include 'registration/login.html' %}
       {% block main %}
-        <div class="page-header">
       {% if user.is_authenticated %}
       {% endif %}
-            <h1><a href="/">Product List</a></h1>
-            <!-- <img src= -->
-        </div>
+            <h2><a href="/">Order Now</a></h2>
       {% endblock %}
-        <div class="content container">
-            <div class="row">
-                <div class="col-md-8">
-      {% block content %}
-      {% endblock %}
-                </div>
-            </div>
-        </div>
+      </div>
     </body>
+    <div class="footer">
+      <h3>Image created by Mestrefungo @http://giphy.com/mestrefungo</h3>
+    </div>
 </html>

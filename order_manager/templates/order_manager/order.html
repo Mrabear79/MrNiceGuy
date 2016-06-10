@@ -1,3 +1,4 @@
+{% extends 'order_manager/base.html' %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,6 +11,7 @@
   <style>
   .myForm {
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    background-color: Chartreuse;
     font-size: 0.8em;
     width: 20em;
     padding: 1em;
@@ -51,7 +53,7 @@
 }
 
   .myForm textarea {
-    height: 100px;
+    height: 25px;
 }
 
   .myForm button {
@@ -99,14 +101,46 @@
 
   <fieldset>
     <legend>Strains</legend>
-    <p><label class="choice"> <input type="checkbox" name="strains" value="nepalese"> Nepalese Kush - Mindful Inc THC: 21.33% CBD: 0.06% </label></p>
-    <p><label class="choice"> <input type="checkbox" name="strains" value="blueberry "> Blueberry Headband - Green Dragon THC: 24.2% CBD: 0.01% </label></p>
+    <p><label class="choice"> <input type="checkbox" name="strains" value="ak"> AK-47 - AVO THC: 23.16% CBD: 0.05% </label></p>
+    <p><label class="choice"> <input type="checkbox" name="strains" value="akron "> Akron - Big Foot Farms THC: 21.07% CBD: 0.31% </label></p>
+    <p><label class="choice"> <input type="checkbox" name="strains" value="blue"> Blue Band - Always Summer Farms THC: 22.81% CBD: 0.08% </label></p>
+    <p><label class="choice"> <input type="checkbox" name="strains" value="cbd"> CBD Girl Scout Cookies - Auction House THC 5.1% CBD 8.7% </label></p>
+    <p><label class="choice"> <input type="checkbox" name="strains" value="chem"> Chemdawg - Happy Camp THC: 18.46% CBD: 0.1% </label></p>
     <p><label class="choice"> <input type="checkbox" name="strains" value="cherry"> Cherry Kush - Terra Canna THC: 20.93% CBD: 0.68% </label></p>
     <p><label class="choice"> <input type="checkbox" name="strains" value="chocolate"> Chocolate Chunk - Guffey THC: 21.21% CBD: 0.07% </label></p>
+    <p><label class="choice"> <input type="checkbox" name="strains" value="cotton"> Cotton Candy - AVO THC 22.46% CBD 0.08% </label></p>
+    <p><label class="choice"> <input type="checkbox" name="strains" value="curry"> Curry OG - AVO THC:26.6% CBD:0.05% </label></p>
+    <p><label class="choice"> <input type="checkbox" name="strains" value="dog"> Dog Walker - Sweet Jane Farms 25.05% THC 0.08% CBD </label></p>
+    <p><label class="choice"> <input type="checkbox" name="strains" value="dr"> Dr. Who - THC 22.66% CBD 0.06% </label></p>
+    <p><label class="choice"> <input type="checkbox" name="strains" value="fruit"> Fruit Loops - Terra Canna THC: 22.19% CBD: 0.24% </label></p>
+    <p><label class="choice"> <input type="checkbox" name="strains" value="general"> General Ho - Applegate Valley Organics THC:14.77% CBD:0.05% </label></p>
+    <p><label class="choice"> <input type="checkbox" name="strains" value="ghost"> Ghost of LeRoy OG - THC: 22.09% CBD: 0.04% </label></p>
+    <p><label class="choice"> <input type="checkbox" name="strains" value="gouda"> Gouda - High Winds Farm THC: 20.53% CBD: 0.04% </label></p>
+    <p><label class="choice"> <input type="checkbox" name="strains" value="happy"> Happy Orange - Happy Camp THC: 18.44% CBD: 0.09% </label></p>
+    <p><label class="choice"> <input type="checkbox" name="strains" value="hash"> Hash Berry - Williams Wonder Farms THC: 17.5% CBD: 0.06% </label></p>
+    <p><label class="choice"> <input type="checkbox" name="strains" value="hug"> Hug Jilly - Hug Farms THC : 19.82% CBD 0% </label></p>
+    <p><label class="choice"> <input type="checkbox" name="strains" value="jilly"> Jilly Chunk - THC: 18.83 CBD: 0.10 </label></p>
+    <p><label class="choice"> <input type="checkbox" name="strains" value="k91"> K-91 - Max Flower Farms THC: 23.77% CBD: 0.06% </label></p>
     <p><label class="choice"> <input type="checkbox" name="strains" value="kimbo"> Kimbo Kush - Garden Terrace THC: 23.35% CBD: 0.05% </label></p>
-    <p><label class="choice"> <input type="checkbox" name="strains" value="northern"> Northern Berry - Moon Rain THC: 22.61% CBD: 0.08% </label></p>
+    <p><label class="choice"> <input type="checkbox" name="strains" value="krypt"> Kryptonite - THC 19.66% CBD 0.23% </label></p>
+    <p><label class="choice"> <input type="checkbox" name="strains" value="lobster"> Lobster Kush - Applegate Valley Organics THC 24.21% CBD .11% </label></p>
     <p><label class="choice"> <input type="checkbox" name="strains" value="money"> Money Maker - Mindful Inc THC: 21.1% CBD: 0.06% </label></p>
-    <p><label class="choice"> <input type="checkbox" name="strains" value="kashmir"> Kashmir Kush - Mindful Inc THC: 27.29% CBD: 0.08% </label></p>
+    <p><label class="choice"> <input type="checkbox" name="strains" value="nepalese"> Nepalese Kush - Mindful Inc THC: 21.33% CBD: 0.06% </label></p>
+    <p><label class="choice"> <input type="checkbox" name="strains" value="northern"> Northern Berry - Moon Rain THC: 22.61% CBD: 0.08% </label></p>
+    <p><label class="choice"> <input type="checkbox" name="strains" value="og"> OG Kush (Garden) - THC: 22.97% CBD: 0.07% </label></p>
+    <p><label class="choice"> <input type="checkbox" name="strains" value="pez"> PEZ - AVO Farms THC 19.41% CBD 0.9% </label></p>
+    <p><label class="choice"> <input type="checkbox" name="strains" value="polar"> Polar Dog - Happy Camp THC: 21.30% CBD:0.08% </label></p>
+    <p><label class="choice"> <input type="checkbox" name="strains" value="power"> Power Wreck - Applegate Valley Organics THC: 23.10% CBD: 0.08% </label></p>
+    <p><label class="choice"> <input type="checkbox" name="strains" value="raw"> Raw Dog - Applegate Valley Organics THC: 20.53% CBD: 0.06% </label></p>
+    <p><label class="choice"> <input type="checkbox" name="strains" value="rootbeer"> Rootbeer Kush - THC: 17.17% CBD: .06% </label></p>
+    <p><label class="choice"> <input type="checkbox" name="strains" value="royal"> Royal Kush - THC 25.28% CBD .38% </label></p>
+    <p><label class="choice"> <input type="checkbox" name="strains" value="soura"> Sour Al - THC: 21.76% CBD: .08% </label></p>
+    <p><label class="choice"> <input type="checkbox" name="strains" value="sourd"> Sour Diesel - THC: 22.29% CBD: 0.07% </label></p>
+    <p><label class="choice"> <input type="checkbox" name="strains" value="tang"> Tangie - THC: 16.34% CBD: .05% </label></p>
+    <p><label class="choice"> <input type="checkbox" name="strains" value="tjp"> TJ's - Purple Kush - THC: 18.1 CBD: 0.1 </label></p>
+    <p><label class="choice"> <input type="checkbox" name="strains" value="tjw"> TJ's White Label - THC: 16.5% CBD: 0%</label></p>
+    <p><label class="choice"> <input type="checkbox" name="strains" value="white"> White Fire OG - THC: 24.02 CBD: 0.10 </label></p>
+    <p><label class="choice"> <input type="checkbox" name="strains" value="yetti"> Yetti OG - THC: 20.32 CBD: 0.06 </label></p>
   </fieldset>
 
 <p>
@@ -119,7 +153,9 @@
   <label>Pickup Dispensary
     <select id="pickup_dispensary" name="pickup_dispensary">
       <option value="" selected="selected">Select One</option>
-      <option value="buds" >Best Buds - 420 SW Drag Way Portland, OR 97201</option>
+      <option value="buds" >Nectar - 4125 N Mississippi Ave. Portland, OR</option>
+      <option value="buds" >Growing ReLeaf - 4160 SW 109th AVE Between Home Depot and Target Beaverton, OR</option>
+      <option value="buds" >The Green Planet - 10020 SW Canyon Rd. Portland, OR</option>
     </select>
   </label>
 </p>

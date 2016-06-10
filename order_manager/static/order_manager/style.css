@@ -1,0 +1,31 @@
+h1  {
+    text-align:center;
+    color: gold;
+    font-family: 'Rye';
+    font-size: 6rem;
+}
+
+body {
+    background-image: url(https://media.giphy.com/media/l41lN3INXMPUTMQak/giphy.gif);
+    background-repeat: no-repeat;
+    background-size: 70%;
+    background-position: top;
+}
+
+h3  {
+    font-size: xx-small;
+}
+
+.header {
+    font-size: 2rem;
+    padding: 1rem;
+    font-family: Rye;
+    width: 100%
+}
+
+.footer {
+  color: gold;
+  position: absolute;
+  bottom: 0;
+  font-family: Rye;
+}
