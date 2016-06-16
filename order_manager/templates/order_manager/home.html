@@ -1,0 +1,41 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MrNiceGuy</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Rye&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{% static 'order_manager/style.css' %}">
+  </head>
+  <body>
+    <div class="header">
+      <h1>Welcome to Mr.NiceGuy</h1>
+    </div>
+  <div class="container">
+    <div class"row">
+      <div class="col-xs-2 nav">
+        {{ user }}
+        {% if user.is_anonymous %}
+        <a href="{% url 'django.contrib.auth.views.login' %}">login</a>
+        {% else %}
+        <a href="{% url 'django.contrib.auth.views.logout' %}">logout</a>
+        {% endif %}
+      {% include 'registration/login.html' %}
+      {% block main %}
+      {% if user.is_authenticated %}
+      {% endif %}
+        <h2><a href="{% url 'menu' %}">MENU</a></h2>
+      {% endblock %}
+      </div>
+      <div class="col-xs-8 splash">
+      </div>
+      <div class="col-xs-2">
+      </div>
+    </div>
+  </div>
+  </body>
+    <div class="footer">
+      <h3><a href="http://giphy.com/mestrefungo">Image credit Mestrefungo</a></h3>
+    </div>
+</html>

@@ -7,15 +7,16 @@ from django.utils import timezone
 
 
 @login_required
-def product_item(request, id):
-    return render(request, 'order_manager/item.html', {
-        'item': Product.objects.get(pk=id)
+def home(request):
+    form = AuthenticationForm()
+    return render(request, 'order_manager/home.html', {
+        'form': form
     })
 
 
-def product_list(request):
-    products = Product.objects.all()
-    return render(request, 'order_manager/list.html', {
+def product_menu(request):
+    products = Product.objects.all().order_by('strain')
+    return render(request, 'order_manager/menu.html', {
         'products': products
     })
 
@@ -33,10 +34,7 @@ def order_form(request):
     return render(request, 'order_manager/order.html', {'form': form})
 
 
-def home(request):
-    products = Product.objects.all()
-    form = AuthenticationForm()
-    return render(request, 'order_manager/home.html', {
-        'products': products,
-        'form': form
+def product_item(request, id):
+    return render(request, 'order_manager/item.html', {
+        'item': Product.objects.get(pk=id)
     })

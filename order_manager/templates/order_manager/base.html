@@ -1,8 +1,8 @@
-{% load staticfiles %}
+<!-- {% load staticfiles %}
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Cannibis Order Form</title>
+    <title>MrNiceGuy</title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <link href='http://fonts.googleapis.com/css?family=Rye&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
@@ -21,11 +21,11 @@
       {% block main %}
       {% if user.is_authenticated %}
       {% endif %}
-            <h2><a href="/">Order Now</a></h2>
+            <h2><a href="{% url 'order_form' %}">Order Now</a></h2>
       {% endblock %}
       </div>
     </body>
     <div class="footer">
-      <h3>Image created by Mestrefungo @http://giphy.com/mestrefungo</h3>
+      <h3><a href="http://giphy.com/mestrefungo">Image credit Mestrefungo</a></h3>
     </div>
-</html>
+</html> -->

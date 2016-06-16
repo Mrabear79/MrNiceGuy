@@ -1,6 +1,5 @@
-<p>{{ item.pk }}</p>
 <p>{{ item.strain }}</p>
 <p>{{ item.description }}</p>
 {% for price in item.prices.all %}
- <span> {{price}} </span> <br>
+ <input type="checkbox"> {{ price.amount }} {{ price.weight }} </input type="checkbox"> <br>
 {% endfor %}
