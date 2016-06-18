@@ -31,6 +31,8 @@ class Product(models.Model):
     def __str__(self):
         return '{0} - {1}'.format(self.strain, self.description, self.prices)
 
+    # class Meta:
+    #     ordering = ['strain', 'prices__amount']
 
 class Dispensary(models.Model):
     name = models.CharField(max_length=60)
@@ -50,3 +52,6 @@ class Order(models.Model):
     total_cost = models.DecimalField(max_digits=10, decimal_places=2)
     time_ordered = models.DateTimeField(default=timezone.now)
     time_pickup = models.DateTimeField()
+
+    def __str__(self):
+        return '{0} - {1}'.format(self.order_id, self.user_acct, self.products, self.total_cost, self.time_ordered, self.time_pickup)

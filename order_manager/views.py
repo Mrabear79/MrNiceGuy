@@ -28,7 +28,7 @@ def order_form(request):
             order = form.save(commit=False)
             order.time_pickup = ()
             order.save()
-        return redirect('product_item', id=product.pk)
+        return render(request, 'order_manager/confirmation.html')
     else:
         form = OrderForm()
     return render(request, 'order_manager/order.html', {'form': form})
@@ -37,4 +37,10 @@ def order_form(request):
 def product_item(request, id):
     return render(request, 'order_manager/item.html', {
         'item': Product.objects.get(pk=id)
+    })
+
+
+def product_confirmation(request):
+    return render(request, 'order_manager/confirmation.html', {
+        'confirmation':  Product.objects.get(request.POST)
     })

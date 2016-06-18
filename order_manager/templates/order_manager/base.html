@@ -1,4 +1,4 @@
-<!-- {% load staticfiles %}
+{% load staticfiles %}
 <!DOCTYPE html>
 <html>
   <head>
@@ -9,23 +9,11 @@
     <link rel="stylesheet" href="{% static 'order_manager/style.css' %}">
   </head>
     <body>
+      <form>
       <div class="header">
-        <h1>Welcome to Mr.NiceGuy</h1>
-        {{ user }}
-        {% if user.is_anonymous %}
-        <a href="{% url 'django.contrib.auth.views.login' %}">login</a>
-        {% else %}
-        <a href="{% url 'django.contrib.auth.views.logout' %}">logout</a>
-        {% endif %}
-      {% include 'registration/login.html' %}
-      {% block main %}
-      {% if user.is_authenticated %}
-      {% endif %}
-            <h2><a href="{% url 'order_form' %}">Order Now</a></h2>
-      {% endblock %}
       </div>
+    </form>
     </body>
     <div class="footer">
-      <h3><a href="http://giphy.com/mestrefungo">Image credit Mestrefungo</a></h3>
     </div>
-</html> -->
+</html>

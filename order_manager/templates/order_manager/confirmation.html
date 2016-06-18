@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>MrNiceGuy</title>
+    <link href='http://fonts.googleapis.com/css?family=Rye&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  </head>
+    <body>
+      <div class="header">
+        <h2>Thanks!! Your order has been processed and will be ready for pickup</h2>
+        {% for item in items %}
+        <p>{{item.strain}}</p>
+        <p>{{price.pk}}</p>
+        {% endfor %}
+        <br>
+        <h4>Looks like your day is fixin to get a whole lot better!! Mr.NiceGuy:) </h4>
+        </br>
+      </div>
+    </body>
+    <div class="footer">
+      <h3><a href="{% url 'home' %}">Click here to return to Homepage</a></h3>
+    </div>
+</html>

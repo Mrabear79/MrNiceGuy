@@ -1,6 +1,10 @@
+<form  action="{% url 'confirmation' %}" method="post">{% csrf_token %}
 {% for item in products %}
   {% include 'order_manager/item.html' %}
 {% endfor %}
 <br>
+</br>
+<br>
 <input type="submit" value="Submit">
 </br>
+</form>
