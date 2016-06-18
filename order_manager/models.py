@@ -34,6 +34,7 @@ class Product(models.Model):
     # class Meta:
     #     ordering = ['strain', 'prices__amount']
 
+
 class Dispensary(models.Model):
     name = models.CharField(max_length=60)
     address = models.CharField(max_length=80)
