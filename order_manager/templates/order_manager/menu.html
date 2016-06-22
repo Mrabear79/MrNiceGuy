@@ -1,10 +1,21 @@
-<form  action="{% url 'confirmation' %}" method="post">{% csrf_token %}
-{% for item in products %}
-  {% include 'order_manager/item.html' %}
-{% endfor %}
-<br>
-</br>
-<br>
-<input type="submit" value="Submit">
-</br>
-</form>
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>MrNiceGuy</title>
+      <link href='http://fonts.googleapis.com/css?family=Rye&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" href="{% static 'order_manager/style.css' %}">
+    </head>
+    <body>
+    <form  action="{% url 'confirmation' %}" method="post">{% csrf_token %}
+    {% for item in products %}
+      {% include 'order_manager/item.html' %}
+    {% endfor %}
+    <br>
+    </br>
+    <br>
+    <input id="button" type="submit" value="Submit">
+    </br>
+    </form>
+  </body>
+</html>

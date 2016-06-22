@@ -31,9 +31,6 @@ class Product(models.Model):
     def __str__(self):
         return '{0} - {1}'.format(self.strain, self.description, self.prices)
 
-    # class Meta:
-    #     ordering = ['strain', 'prices__amount']
-
 
 class Dispensary(models.Model):
     name = models.CharField(max_length=60)

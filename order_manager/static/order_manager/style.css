@@ -1,7 +1,7 @@
 h1  {
     text-align:center;
     color: gold;
-    font-family: 'Rye';
+    font-family: Rye;
     font-size: 6rem;
 }
 
@@ -21,12 +21,29 @@ h3  {
   width: 100%;
 }
 
+#foot a {
+  background-color: gold;
+}
+
+#foot a:hover{
+  background-color: springgreen;
+}
+
+#button {
+  background-color: springgreen;
+}
 .nav {
     background-color: ;
     color: gold;
     font-size: 1rem;
     font-family: Rye;
 
+}
+
+body {
+  background-color: black;
+  font-family: Rye;
+  color: orangered;
 }
 
 .header {
@@ -49,18 +66,12 @@ h3  {
 /*confirmation.html*/
 h2  {
     color: red;
-    font-family: 'Rye';
+    font-family: Rye;
     font-size: 3.5rem;
 }
 
 h4 {
     color: orange;
-    font-family: 'Rye';
+    font-family: Rye;
     font-size: 2.5rem;
-}
-
-h3 a  {
-    color: gold;
-    font-family: 'Rye';
-    font-size: 1.5rem;
 }
